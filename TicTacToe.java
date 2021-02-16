@@ -31,6 +31,8 @@ public class TicTacToe {
 	public static void main(String[] args) {
 		System.out.println("***Welcome to Tic Tac Toe Game***");
 		createCroosBoard();
-	}
-	
+		TicTacToe obj = new TicTacToe();
+                char playerOne = obj.chooseLetter();
+                System.out.println("Player One Has Entered :" + playerOne);
+	}	
 }

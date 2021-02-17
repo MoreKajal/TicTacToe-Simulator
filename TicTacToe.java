@@ -28,9 +28,37 @@ public class TicTacToe {
 		return playerOne;
 	}
 
+	//Display Board
+	static char[] board = new char[10];
+	public static void showBoard() {
+		System.out.println("| " + board[1] + " | " + board[2] + " | " + board[3] + " | ");
+		System.out.println("|----------|");
+		System.out.println("| " + board[4] + " | " + board[5] + " | " + board[6] + " | ");
+		System.out.println("|----------|");
+		System.out.println("| " + board[7] + " | " + board[8] + " | " + board[9] + " | ");
+	}
+	
+	public void makeMove(char[] board, char player) {
+		System.out.println("Choose Cell Index 1-9 to Enter Letter ");
+		Scanner input = new Scanner(System.in);
+		//System.out.println("Enter a number from 1 to 9");
+		int userInput = input.nextInt();
+		if (userInput > 0 && userInput < 10  || userInput < 10 && (board[userInput] == ' ')) {
+			System.out.println("Cell is Free");
+		}
+		else {
+		System.out.println("Cell is Not Free");	
+		}
+	}
+
 	public static void main(String[] args) {
 		System.out.println("***Welcome to Tic Tac Toe Game***");
 		createCroosBoard();
+		TicTacToe obj = new TicTacToe();
+		char playerOne = obj.chooseLetter();
+		System.out.println("Player One Has Entered :" + playerOne);
+		showBoard();
+
 	}
 	
 }

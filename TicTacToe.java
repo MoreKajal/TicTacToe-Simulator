@@ -49,16 +49,26 @@ public class TicTacToe {
 		System.out.println("Cell is Not Free");	
 		}
 	}
-	
+	public static final int HEAD = 1;
+	public static final int TAIL = 0;
+	public static void makeToss() {
+		double toss = Math.floor(Math.random() * 10 ) % 2;
+		if ((int)toss == HEAD) {
+			System.out.println("PlayerOne Won The Toss ");
+		}else {
+			System.out.println("PlayerComp Won The Toss ");
+		}	
+	}
 	
 	public static void main(String[] args) {
 		System.out.println("***Welcome to Tic Tac Toe Game***");
 		createCroosBoard();
+		makeToss();
 		TicTacToe obj = new TicTacToe();
 		char playerOne = obj.chooseLetter();
 		System.out.println("Player One Has Entered :" + playerOne);
 		showBoard();
-		obj.makeMove(board, playerOne);
+		obj.makeMove(board, playerOne);		
 		}
 }
 

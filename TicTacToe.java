@@ -41,7 +41,6 @@ public class TicTacToe {
 	public void makeMove(char[] board, char player) {
 		System.out.println("Choose Cell Index 1-9 to Enter Letter ");
 		Scanner input = new Scanner(System.in);
-		//System.out.println("Enter a number from 1 to 9");
 		int userInput = input.nextInt();
 		if (userInput > 0 && userInput < 10  || userInput < 10 && (board[userInput] == ' ')) {
 			System.out.println("Cell is Free");
@@ -58,7 +57,6 @@ public class TicTacToe {
 		char playerOne = obj.chooseLetter();
 		System.out.println("Player One Has Entered :" + playerOne);
 		showBoard();
-
+		obj.makeMove(board, playerOne);
 	}
-	
 }

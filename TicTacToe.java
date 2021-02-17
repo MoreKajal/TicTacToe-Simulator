@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class TicTacToe {
 	
@@ -7,7 +8,6 @@ public class TicTacToe {
 			crossBoard[i] = ' ';
 		}
 	}
-	
 	//Choose letter X or O
 	public char playerOne;
 	public char playerComp;
@@ -27,7 +27,6 @@ public class TicTacToe {
 		}
 		return playerOne;
 	}
-
 	//Display Board
 	static char[] board = new char[10];
 	public static void showBoard() {
@@ -44,12 +43,14 @@ public class TicTacToe {
 		int userInput = input.nextInt();
 		if (userInput > 0 && userInput < 10  || userInput < 10 && (board[userInput] == ' ')) {
 			System.out.println("Cell is Free");
+			System.out.println("Player can Make the Move");
 		}
 		else {
 		System.out.println("Cell is Not Free");	
 		}
 	}
-
+	
+	
 	public static void main(String[] args) {
 		System.out.println("***Welcome to Tic Tac Toe Game***");
 		createCroosBoard();
@@ -58,5 +59,6 @@ public class TicTacToe {
 		System.out.println("Player One Has Entered :" + playerOne);
 		showBoard();
 		obj.makeMove(board, playerOne);
-	}
+		}
 }
+

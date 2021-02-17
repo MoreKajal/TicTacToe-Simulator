@@ -60,6 +60,27 @@ public class TicTacToe {
 		}	
 	}
 	
+	public static void checkWinOrTie() {
+		if (board[1] == board[4] && board[4] == board[7] && board[1] != ' ') {
+			System.out.println("Its a Win");
+		}else if (board[2] == board[5] && board[5] == board[8] && board[2] != ' ') {
+			System.out.println("Its a Win");
+		}else if (board[3] == board[6] && board[6] == board[9] && board[3] != ' ') {
+			System.out.println("Its a Win");
+		}else if (board[1] == board[2] && board[2] == board[3] && board[2] != ' ') {
+			System.out.println("Its a Win");
+		}else if (board[4] == board[5] && board[5] == board[6] && board[6] != ' ') {
+				System.out.println("Its a Win");
+		}else if (board[7] == board[8] && board[8] == board[9] && board[7] != ' ') {
+			System.out.println("Its a Win");
+		}else if (board[1] == board[5] && board[5] == board[9] && board[9] != ' ') {
+			System.out.println("Its a Win");
+		}else if (board[3] == board[5] && board[5] == board[7] && board[7] != ' ') {
+			System.out.println("Its a Win");
+		}else
+			System.out.println("Its a Tie");
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("***Welcome to Tic Tac Toe Game***");
 		createCroosBoard();
@@ -68,7 +89,10 @@ public class TicTacToe {
 		char playerOne = obj.chooseLetter();
 		System.out.println("Player One Has Entered :" + playerOne);
 		showBoard();
-		obj.makeMove(board, playerOne);		
+		obj.makeMove(board, playerOne);
+		checkWinOrTie();
 		}
 }
+
+
 
